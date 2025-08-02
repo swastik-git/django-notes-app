@@ -5,6 +5,7 @@ pipeline {
     stages {
         stage('Code clone') {
             steps {
+                clean_ws()
                 clone('https://github.com/swastik-git/django-notes-app.git', 'main')
             }
         }
