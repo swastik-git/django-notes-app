@@ -10,12 +10,12 @@ pipeline {
         }
         stage('Code Build') {
             steps {
-                dockerbuild(imageName:'notes-app')
+                docker_build(imageName:'notes-app')
             }
         }
         stage('Push to DockerHub') {
             steps {
-                dockerpush(
+                docker_push(
                     imageName: 'notes-app',
                     imageTag: 'latest',
                     credentials: 'docker_hub_creds'
